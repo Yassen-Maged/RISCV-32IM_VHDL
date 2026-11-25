@@ -5,7 +5,6 @@ A 32-bit pipelined RISC-V processor core written in VHDL implementing the **RV32
 ## Current Status
 * **Stage 1 — RTL & Simulation (Done):** Pipelined datapath, hazard detection, data forwarding, `mul` execution, linker-script placement (`<_start>` at `0x00000000`), and store-event reporting verified in ModelSim across test programs.
 * **Stage 2 — FPGA & UART TX Telemetry (Next):** Top-level DE10-Lite integration with internal memories and UART TX streaming of store events to a PC.
-* **Stage 3 — Host Commands via UART RX (Planned):** Sending commands/data from the PC back to the processor.
 
 ## Repository Layout
 * `rtl/` — VHDL RTL modules for the pipelined RV32IM core.
