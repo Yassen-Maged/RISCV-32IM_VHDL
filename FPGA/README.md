@@ -14,3 +14,5 @@ Intel Quartus Prime project files and memory initialization assets for the Teras
 ## Status & Roadmap
 * **Current:** Top-level shell and internal memories structured to avoid excessive top-level port counts during synthesis/fitting.
 * **Stage 2 (Next):** Add UART TX store telemetry (`MAX10_CLK1_50` baud divider + store FIFO/packetizer) wired to a 3.3V USB-TTL `RXD` pin.
+
+* **Note:** Top-level file is RISCV_CORE_top_level.vhd
