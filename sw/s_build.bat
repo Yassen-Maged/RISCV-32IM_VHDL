@@ -1,6 +1,16 @@
 @echo off
-REM Set your target assembly base filename here (without extension)
-set PROG=prog3
+REM Pass program name on command line, e.g.: s_build.bat prog1
+REM Defaults to prog3 if no argument is given
+if "%~1"=="" (
+    set "PROG=prog3"
+) else (
+    set "PROG=%~1"
+)
+
+if not exist "%PROG%.s" (
+    echo ERROR: Source file "%PROG%.s" not found.
+    exit /b 1
+)
 
 echo [1/3] Compiling %PROG%.s to ELF...
 xpack-riscv-none-elf-gcc-15.2.0-1\bin\riscv-none-elf-gcc.exe -march=rv32im -mabi=ilp32 -nostdlib -Ttext 0x0 -o %PROG%.elf %PROG%.s
